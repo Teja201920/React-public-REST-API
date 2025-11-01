@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+function Students() {
+  const studentData = [
+    { rollNo: "CSE01", name: "Tejaswarrao", department: "CSE", marks: 92 },
+    { rollNo: "CSE02", name: "Prasanna", department: "CSE", marks: 89 },
+    { rollNo: "CSE03", name: "Sai Teja", department: "CSE", marks: 85 },
+    { rollNo: "CSE04", name: "Abhishek", department: "CSE", marks: 90 },
+    { rollNo: "CSE05", name: "Dhilli Rao", department: "CSE", marks: 88 },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: "center", marginTop: "30px" }}>
+      <h2>Student Information</h2>
+      <table border="1" cellPadding="10" align="center">
+        <thead>
+          <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          {studentData.map((student, index) => (
+            <tr key={index}>
+              <td>{student.rollNo}</td>
+              <td>{student.name}</td>
+              <td>{student.department}</td>
+              <td>{student.marks}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
 
-export default App;
+export default Students;
